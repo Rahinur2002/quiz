@@ -1,95 +1,96 @@
+
 const questions = [
   {
-    question: "Q1",
+    question: "Who was the 2025 dunk contest champion?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "Mac Mclung", correct: true },
+      { text: "Zach Lavine", correct: false },
+      { text: "Stephon Castle", correct: false },
+      { text: "Andre Jackon Jr", correct: false },
     ],
   },
   {
-    question: "Q1",
+    question: "How many players are on the court per team during a basketball game?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "4", correct: false },
+      { text: "5", correct: true },
+      { text: "6", correct: false },
+      { text: "7", correct: false },
     ]
   },
-   { question: "Q1",
+   { question: "What year was the NBA founded?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "1946", correct: true },
+      { text: "1952", correct: false },
+      { text: "1963", correct: false },
+      { text: "1980", correct: false },
     ]
 },
- {question: "Q1",
+ {question: "Which team has won the most NBA championships?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "Chicago Bulls", correct: false },
+      { text: "Golden State Warriors", correct: false },
+      { text: "Los Angeles Lakers", correct: false },
+      { text: "Boston Celtics", correct: true },
     ]
 },
- {question: "Q1",
+ {question: "What is a triple-double?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-    ]
-},
-{
-     question: "Q1",
-    answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "Hitting 3 three-point shots", correct: false },
+      { text: "Achieving 10+ in 3 stat categories", correct: true },
+      { text: "Committing 3 fouls in a row", correct: false },
+      { text: "Dunking three times", correct: false },
     ]
 },
 {
-     question: "Q1",
+     question: "Which player is known for the Sky Hook",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "Shaquille O'Neal", correct: false },
+      { text: "Kareem Abdul-Jabbar", correct: true },
+      { text: "Tim Duncan", correct: false },
+      { text: "Larry Bird", correct: false },
     ]
 },
 {
-     question: "Q1",
+     question: "Which country invented basketball?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "United States", correct: true },
+      { text: "Canada", correct: false },
+      { text: "Greece", correct: false },
+      { text: "China", correct: false },
     ]
 },
 {
-     question: "Q1",
+     question: "Who holds the record for the most points scored in a single NBA game?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "Michael Jordan", correct: false },
+      { text: "Kobe Bryant", correct: false },
+      { text: "Wilt Chamberlain", correct: true },
+      { text: "LeBron James", correct: false },
     ]
 },
 {
-     question: "Q1",
+     question: "How long is an NBA regulation game (not including overtime)?",
     answers: [
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
-      { text: "a1", correct: false },
+      { text: "40 minutes", correct: false },
+      { text: "42 minutes", correct: false },
+      { text: "48 minutes", correct: true },
+      { text: "60 minutes", correct: false },
+    ]
+},
+{
+     question: "Which of these is NOT a position in basketball?",
+    answers: [
+      { text: "Center", correct: false },
+      { text: "Forward", correct: false },
+      { text: "Striker", correct: true },
+      { text: "Guard", correct: false },
     ]
 }
 ];
 
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-buttons");
+const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
@@ -97,81 +98,88 @@ let score = 0;
 
 function startQuiz() {
     currentQuestionIndex = 0;
-    let score = 0;
+    score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
 
+function showQuestion() {
+  resetState();
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNo = currentQuestionIndex + 1;
+  questionElement.innerHTML = questionNo + "." + currentQuestion.question;
 
-
-
-
-
-
-
-
-
-
-
-
-
-const questions = [
-  "1. Who was the 2025 dunk contest champion?",
-  "Q2",
-  "Q3",
-  "Q4",
-  "Q5",
-];
-const choices = [
-  ["Mac Mclung", "Zach Lavine", "Stephon Castle", "Andre Jackon Jr"],
-  ["4", "5", "6", "7"],
-  [],
-];
-const answers = ["Mac Mclung", "5"];
-
-document.querySelector(".quizForm").onsubmit = function (e) {
-  e.preventDefault();
-
-  const answers = {
-    q1: "Mac Mclung",
-    q2: "5",
-    q3: "1946",
-    q4: "celtics",
-    q5: "10+stats",
-    q6: "kareem",
-    q7: "usa",
-    q8: "wilt",
-    q9: "48",
-    q10: "striker",
-  };
-  let score = 0;
-
-  for (let i = 1; i <= 10; i++) {
-    const qName = "q" + i;
-    const selected = document.querySelector(`input[name="${qName}"]:checked`);
-    const feedback = document.querySelector(`.feedback-q${i}`);
-
-    if (selected) {
-      if (selected.value === answers[qName]) {
-        feedback.textContent = "Correct!";
-        feedback.style.color = "green";
-        score++;
-      } else {
-        feedback.textContent = "Wrong!";
-        feedback.style.color = "red";
-      }
-    } else {
-      feedback.textContent = "No answer has been selected";
-      feedback.style.color = "orange";
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerButtons.appendChild(button);
+    if(answer.correct) {
+      button.dataset.correct = answer.correct;
     }
+    button.addEventListener("click", selectAnswer);
+  });
+}
+
+function resetState() {
+  nextButton.style.display = "none";
+  while(answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
   }
-  let result = document.querySelector(".result");
-  if (!result) {
-    result = document.createElement("div");
-    result.className = "result";
-    document.querySelector(".quizForm").appendChild(result);
+}
+
+function selectAnswer(e) {
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  if(isCorrect) {
+    selectedBtn.classList.add("Correct");
+    score++;
+  }else{
+    selectedBtn.classList.add("Incorrect");
   }
-  result.textContent = `Your score: ${score}/10`;
-  result.style.fontWeight = "bold";
-  result.style.marginTop = "20px";
-};
+  Array.from(answerButtons.children).forEach(button => {
+    if(button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextButton.style.display = "block";
+}
+
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+  nextButton.innerHTML = "play Again";
+  nextButton.style.display = "block";
+
+}
+function handleNextButton() {
+  currentQuestionIndex++;
+  if(currentQuestionIndex < questions.length) {
+    showQuestion();
+  }else{
+    showScore();
+  }
+}
+nextButton.addEventListener("click", ()=> {
+  if(currentQuestionIndex < questions.length) {
+    handleNextButton();
+  }else{
+    startQuiz();
+  }
+  
+});
+startQuiz();
+
+
+
+
+
+
+
+
+
+
+
+
+

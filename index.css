@@ -33,7 +33,7 @@ body {
 
 .btn{
     background-color: white;
-    color:red;
+    color:rgb(55, 0, 255);
     font-weight: 500;
     width: 100%;
     border: 1px solid #222;
@@ -44,14 +44,18 @@ body {
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover:not([disabled]){
 background-color: black;
   color: white;
+
+}
+.btn:disabled{
+  cursor: no-drop;
 }
 
 #next-btn{
-    background:blue;
-    color: red;
+    background:rgb(243, 243, 248);
+    color: rgb(255, 0, 0);
     font-weight: 500;
     width: 150px;
     border: 0;
@@ -60,4 +64,13 @@ background-color: black;
     border-radius: 4px;
     cursor: pointer;
     display: none;
+}
+
+.Correct {
+  background: green;
+
+}
+
+.Incorrect {
+  background: rgb(136, 79, 79);
 }
